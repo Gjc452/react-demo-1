@@ -6,15 +6,16 @@ import './style.css'
 class App extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      x: 1
-    }
+    this.state = {x: 1, y: 2}
   }
 
   add = () => {
-    this.setState({
-      x: this.state.x + 1
-    })
+    this.setState((state) => ({x: state.x + 1}))
+    this.setState((state) => ({x: state.x + 1}))
+  }
+  add1 = () => {
+    this.setState({x: this.state.x + 1})
+    this.setState({x: this.state.x + 1})
   }
 
   render() {
@@ -29,14 +30,6 @@ class App extends React.Component {
 }
 
 class B extends React.Component {
-  componentWillReceiveProps(nextProps, nextContext) {
-    console.log('旧的 props')
-    console.log(this.props)
-    console.log('props变化了')
-    console.log('新的 props')
-    console.log(nextProps)
-  }
-
   render() {
     return (
       <div>
