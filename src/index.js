@@ -12,11 +12,11 @@ class App extends React.Component {
   add = () => {
     this.setState((state) => ({x: state.x + 1}))
     this.setState((state) => ({x: state.x + 1}))
-  }
+  } // 会进行两次 +1 操作
   add1 = () => {
     this.setState({x: this.state.x + 1})
     this.setState({x: this.state.x + 1})
-  }
+  } // 只会进行一次 +1 操作，因为 setState 不会立即改变 this.state
 
   render() {
     return (
